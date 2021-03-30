@@ -3,14 +3,16 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const session = require("express-session");
+const flash = require("connect-flash");
 const passport = require("passport");
 const path = require("path");
 const auth = require("./auth/pasport");
 
-const indexRouter = require("./routes/index.js");
-const userRouter = require("./routes/users");
+const indexRoute = require("./routes/index.js");
+const userRoute = require("./routes/users");
+const userAdminRoute = require("./routes/userAdmin");
 
-// auth 
+// auth
 
 auth(passport);
 
@@ -40,10 +42,12 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // routes
-app.use("/", indexRouter);
-app.use("/users", userRouter);
+app.use("/", indexRoute);
+app.use("/users", userRoute);
+app.use("/useradmin", userAdminRoute);
 
 // start app
 
