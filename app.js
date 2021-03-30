@@ -1,13 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const path = require("path");
 
 const indexRouter = require("./routes/index.js");
 const userRouter = require("./routes/users");
 
 // template engine
-
-app.set("view engin", "ejs");
+app.set("views", path.resolve(__dirname, "views"));
+app.set('view engine', 'ejs');
 
 // routes
 app.use("/", indexRouter);
