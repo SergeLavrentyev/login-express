@@ -1,9 +1,18 @@
-# modules
+# additional files
 
 /node_modules/
+*.log
+*.lock
 
 # config
 
 *.env
-*.log
-*.lock
+
+# OS files & folders
+.DS_Store
+Thumbs.db
+
+# editor files
+.idea
+*.sublime*
+.vscode
