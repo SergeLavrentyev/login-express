@@ -5,6 +5,9 @@
   "repository": "git@github.com:SergeLavrentyev/login-express.git",
   "author": "SergeLavrentev <bert679@yandex.ru>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
