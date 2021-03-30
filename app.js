@@ -20,6 +20,10 @@ mongoose
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// Middlewares
+
+app.use(express.urlencoded({ extended: true }));
+
 // routes
 app.use("/", indexRouter);
 app.use("/users", userRouter);

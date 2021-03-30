@@ -1,17 +1,47 @@
-<form class="form" action="">
+<%= include('./partials/messages') %>
+
+<form class="form" action="/users/register" method="POST">
   <fieldset>
     <legend>Register form</legend>
     <label class="form__label">
       <span>username</span>
-      <input type="text" class="form__input" />
+      <input
+        type="text"
+        name="name"
+        value="<%= typeof name != 'undefined' ? name : '' %>"
+        class="form__input"
+        placeholder="Your name"
+      />
     </label>
     <label class="form__label">
       <span>email</span>
-      <input type="email" class="form__input" />
+      <input
+        type="email"
+        name="email"
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+        class="form__input"
+        placeholder="Your email"
+      />
     </label>
     <label class="form__label">
       <span>password</span>
-      <input type="password" class="form__input" />
+      <input
+        type="password"
+        name="password"
+        class="form__input"
+        value="<%= typeof password != 'undefined' ? password : '' %>"
+        placeholder="Your password"
+      />
+    </label>
+    <label class="form__label">
+      <span>confirm password</span>
+      <input
+        type="password"
+        name="password2"
+        class="form__input"
+        value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+        placeholder="Confirm your password"
+      />
     </label>
     <button class="form__button" type="submit">Login</button>
     <a class="form__button" href="/">Back</a>
